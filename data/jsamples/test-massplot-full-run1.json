@@ -1,0 +1,28 @@
+{
+    "proc":[
+        {
+         "tag":"ZJets",
+         "isdata":false,
+         "color":"001",
+         "lcolor":1,
+         "marker":1,
+         "data":[
+                {
+                "dtag":"spy-zjets"
+                }
+          ]
+        },
+        {
+         "tag":"TTbarBKG",
+         "isdata":false,
+         "color":"002",
+         "lcolor":1,
+         "marker":1,
+         "data":[
+                {
+                "dtag":"spy-ttbar-mcbkg"
+                }
+          ]
+        }
+    ]
+}

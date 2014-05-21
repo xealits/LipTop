@@ -1,0 +1,16 @@
+{
+    "proc":[
+        {
+         "tag":"ZJets",
+         "isdata":false,
+         "color":"001",
+         "lcolor":1,
+         "marker":1,
+         "data":[
+                {
+                "dtag":"spy-zjets"
+                }
+          ]
+        }
+    ]
+}

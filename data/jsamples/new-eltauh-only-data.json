@@ -1,0 +1,16 @@
+{
+    "proc":[
+     {
+	 "tag":"ElectronData",
+         "isdata":true,
+         "color":"824",
+	 "fill":0,
+	 "marker":20,
+         "data":[
+		{
+ 	        "dtag":"spy-data"
+                }
+	  ]
+	}
+    ]
+}

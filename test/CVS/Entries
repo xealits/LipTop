@@ -1,0 +1,14 @@
+/copyKinResults.sh/1.1/Mon May  9 11:23:06 2011//TV11-11-07
+/createDoubleElectronPatTuple_cfg.py/1.4/Tue Jun 14 21:07:52 2011//TV11-11-07
+/createDoubleMuonPatTuple_cfg.py/1.4/Tue Jun 14 21:07:52 2011//TV11-11-07
+/createMCPatTuple_cfg.py/1.6/Tue Jun 14 21:07:53 2011//TV11-11-07
+/createMuEGPatTuple_cfg.py/1.4/Tue Jun 14 21:07:53 2011//TV11-11-07
+/createPatTuple_cfg.py/1.14/Wed Sep 14 16:21:17 2011//TV11-11-07
+/createSingleMuonPatTuple_cfg.py/1.1/Mon Jul  4 22:54:27 2011//TV11-11-07
+/dileptonAnalysis_cfg.py/1.8/Tue Oct 25 23:00:58 2011//TV11-11-07
+/kinAnalysis_cfg.py/1.6/Mon May  9 12:58:30 2011//TV11-11-07
+/mergeOutputs.sh/1.1/Mon May  9 11:23:06 2011//TV11-11-07
+/mount_store.sh/1.1/Mon May  9 11:24:31 2011//TV11-11-07
+/runAnalysis_cfg.py/1.1/Thu Oct 27 20:44:50 2011//TV11-11-07
+/runAnalysis_cfg.py.templ/1.6/Thu Nov  3 20:44:19 2011//TV11-11-07
+D/prod////

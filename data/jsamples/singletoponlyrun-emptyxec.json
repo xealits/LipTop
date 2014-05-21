@@ -1,0 +1,16 @@
+{
+    "proc":[
+        {
+         "tag":"SingleTop",
+         "isdata":false,
+         "color":"831",
+         "lcolor":1,
+         "marker":1,
+         "data":[
+                {
+                "dtag":"spy-singletop"
+                }
+          ]
+        }
+    ]
+}

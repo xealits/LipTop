@@ -1,0 +1,33 @@
+{
+    "proc":[
+     {
+	 "tag":"Diboson",
+         "isdata":false,
+         "color":"596",
+	 "lcolor":1,
+	 "marker":1,
+         "data":[
+		{
+ 	        "dtag":"spy-ttbar-mcbkg",
+		"xsec":0.02189237
+                },
+		{
+		"dtag":"spy-singletop",
+		"xsec":0.02189237
+		},
+		{
+		"dtag":"spy-ttbar-ddbkg",
+		"xsec":0.02189237
+		},
+		{
+		"dtag":"spy-ttbar-etau",
+		"xsec":0.02189237
+		},
+		{
+		"dtag":"spy-zjets",
+		"xsec":0.02189237
+		}
+	  ]
+	}
+    ]
+}

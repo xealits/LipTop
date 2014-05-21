@@ -1,0 +1,16 @@
+{
+    "proc":[
+        {
+         "tag":"Dibosons",
+         "isdata":false,
+         "color":"809",
+         "lcolor":1,
+         "marker":1,
+         "data":[
+                {
+                "dtag":"spy-dibosons"
+                }
+          ]
+        }
+    ]
+}

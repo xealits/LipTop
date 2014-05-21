@@ -1,0 +1,16 @@
+{
+    "proc":[
+     {
+	 "tag":"Data",
+         "isdata":false,
+         "color":"824",
+	 "fill":0,
+	 "marker":20,
+         "data":[
+		{
+ 	        "dtag":"spy-ttbar-mutau"
+                }
+	  ]
+	}
+    ]
+}

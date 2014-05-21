@@ -1,0 +1,17 @@
+{
+    "proc":[
+     {
+	 "tag":"Diboson",
+         "isdata":true,
+         "color":"596",
+	 "lcolor":1,
+	 "marker":1,
+         "data":[
+		{
+ 	        "dtag":"spy-Electron",
+		"xsec":0.02189237
+                }
+	  ]
+	}
+    ]
+}
