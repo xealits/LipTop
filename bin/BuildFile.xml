@@ -6,5 +6,6 @@
   <bin name="showControlDistributions"  file="showControlDistributions.cc"></bin> 
   <bin name="showMassDistribution"      file="showMassDistribution.cc"></bin> 
   <bin name="textoutMassDistribution"      file="textoutMassDistribution.cc"></bin>
+  <bin name="textoutSpyNtupleEvents.cc"      file="textoutSpyNtupleEvents.cc"></bin>
 </environment>
 <Flags CXXFLAGS="-g"/>

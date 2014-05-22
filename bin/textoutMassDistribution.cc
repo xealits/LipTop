@@ -141,45 +141,46 @@ int main(int argc, char* argv[])
       TMVA::Tools::Instance();
       
       if(trainMVA)
-	{
-	  //create the factory object. 
-	  tmvaFactory = new TMVA::Factory( studyTag.Data(), file,"!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
-	 
-	  //variables to study
-	  TString varsString("");
-	  for(std::vector<std::string>::iterator it = varsList.begin(); it != varsList.end(); it++) 
-	    {
-	      if(it != varsList.begin()) varsString += ":";
-	      varsString += *it;
-	      tmvaFactory->AddVariable( *it, *it, "", 'F');
-	    }
-	  tmvaFactory->AddSpectator( "eventCategory" );
-	  
-	  cout << "==> Start TMVAClassification with " << methodList.size() << " methods and " << nVariables-1 << " variables" << endl;
-	}
+        {
+          //create the factory object. 
+          tmvaFactory = new TMVA::Factory( studyTag.Data(), file,"!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P;G,D:AnalysisType=Classification" );
+         
+          //variables to study
+          TString varsString("");
+          for(std::vector<std::string>::iterator it = varsList.begin(); it != varsList.end(); it++) 
+            {
+              if(it != varsList.begin()) varsString += ":";
+              varsString += *it;
+              tmvaFactory->AddVariable( *it, *it, "", 'F');
+            }
+          tmvaFactory->AddSpectator( "eventCategory" );
+          
+          cout << "==> Start TMVAClassification with " << methodList.size() << " methods and " << nVariables-1 << " variables" << endl;
+        }
       else
-	{
-	  //reader for the methods
-	  tmvaReader = new TMVA::Reader( "!Color:!Silent" );
-	  
-	  //variables to use
-	  for(size_t ivar=0; ivar<varsList.size(); ivar++)   tmvaReader->AddVariable( varsList[ivar], &tmvaVarsF[ivar] );
-	  tmvaReader->AddSpectator("eventCategory", &tmvaVarsF[varsList.size()]);
-	  
-	  //read the methods already trained
-	  for(size_t imet=0; imet<methodList.size(); imet++)
-	    {
-	      //open the file with the method description         
-	      TString weightFile = weightsDir + "/" + studyTag + "_" + methodList[imet] + ".weights.xml";
-	      gSystem->ExpandPathName(weightFile);
-	      tmvaReader->BookMVA(methodList[imet], weightFile);
-	      TH1 *h=tmva::getHistogramForDiscriminator( methodList[imet] );
-	      controlHistos.addHistogram( h );
-	      controlHistos.addHistogram( (TH1 *)h->Clone(h->GetName()+TString("correct")) );
-	      controlHistos.addHistogram( (TH1 *)h->Clone(h->GetName()+TString("wrong")) );
-	      controlHistos.addHistogram( new TH1F(methodList[imet]+TString("decision"),";Good decisions",2,0.,2.) );
-	    }
-	}
+        {
+          //reader for the methods
+          tmvaReader = new TMVA::Reader( "!Color:!Silent" );
+          
+          //variables to use
+          for(size_t ivar=0; ivar<varsList.size(); ivar++)
+             tmvaReader->AddVariable( varsList[ivar], &tmvaVarsF[ivar] );
+          tmvaReader->AddSpectator("eventCategory", &tmvaVarsF[varsList.size()]);
+          
+          //read the methods already trained
+          for(size_t imet=0; imet<methodList.size(); imet++)
+            {
+              //open the file with the method description         
+              TString weightFile = weightsDir + "/" + studyTag + "_" + methodList[imet] + ".weights.xml";
+              gSystem->ExpandPathName(weightFile);
+              tmvaReader->BookMVA(methodList[imet], weightFile);
+              TH1 *h=tmva::getHistogramForDiscriminator( methodList[imet] );
+              controlHistos.addHistogram( h );
+              controlHistos.addHistogram( (TH1 *)h->Clone(h->GetName()+TString("correct")) );
+              controlHistos.addHistogram( (TH1 *)h->Clone(h->GetName()+TString("wrong")) );
+              controlHistos.addHistogram( new TH1F(methodList[imet]+TString("decision"),";Good decisions",2,0.,2.) );
+            }
+        }
     }
   
   
@@ -266,10 +267,10 @@ int main(int argc, char* argv[])
       float weight = ev.weight;
 
       if(isMC)
-	{
-	  if(mcTruthMode==1 && !ev.isSignal) continue;
-	  if(mcTruthMode==2 && ev.isSignal) continue;
-	}
+        {
+          if(mcTruthMode==1 && !ev.isSignal) continue;
+          if(mcTruthMode==2 && ev.isSignal) continue;
+        }
     
       std::vector<TString> categs;
       categs.push_back("all");
@@ -287,39 +288,40 @@ int main(int argc, char* argv[])
       if(!ev.isSignal) nRecoBs=0;
       int iCorrectComb=0;
       if(nRecoBs>1)
-	{
-	  //the charge of the generator level matched particles must be opposite
-	  int assignCode=(phys.leptons[0].genid*phys.jets[0].flavid);
-	  if(assignCode<0) iCorrectComb=1;
-	  else             iCorrectComb=2;
-	 //  cout << iCorrectComb << " | " 
-	  // 	       << phys.leptons[0].genid << " (" << phys.leptons[0].pt() << ") "
-	  // 	       << phys.leptons[1].genid << " (" << phys.leptons[1].pt() << ") |"
-	  // 	       << phys.jets[0].flavid << " (" << phys.jets[0].btag1 << ") "
-	  // 	       << phys.jets[1].flavid << " (" << phys.jets[1].btag1 << ") |"
-	  // 	       << endl;
- 	}
+        {
+          //the charge of the generator level matched particles must be opposite
+          int assignCode=(phys.leptons[0].genid*phys.jets[0].flavid);
+          if(assignCode<0) iCorrectComb=1;
+          else             iCorrectComb=2;
+         //  cout << iCorrectComb << " | " 
+          // 	       << phys.leptons[0].genid << " (" << phys.leptons[0].pt() << ") "
+          // 	       << phys.leptons[1].genid << " (" << phys.leptons[1].pt() << ") |"
+          // 	       << phys.jets[0].flavid << " (" << phys.jets[0].btag1 << ") "
+          // 	       << phys.jets[1].flavid << " (" << phys.jets[1].btag1 << ") |"
+          // 	       << endl;
+        }
       
       //btag counting
       int nbtags(0);
-      for(size_t ijet=0; ijet<phys.jets.size(); ijet++) nbtags += (phys.jets[ijet].btag1>1.7);
-     
+      for(size_t ijet=0; ijet<phys.jets.size(); ijet++)
+          nbtags += (phys.jets[ijet].btag1>1.7);
+
       //get the combination preferred by KIN
       TH1F *h1=kinHandler.getHisto("mt",1), *h2=kinHandler.getHisto("mt",2);
       h1->Rebin(2); h2->Rebin(2);
-    
+
       std::map<TH1*, std::map<TString,Double_t> > histoVars;
       histoVars[h1]=histoAnalyzer.analyzeHistogram(h1);
       histoVars[h2]=histoAnalyzer.analyzeHistogram(h2);
       for(std::map<TH1 *,std::map<TString,Double_t> >::iterator hvit=histoVars.begin(); hvit !=histoVars.end(); hvit++)
-	{
-	  std::map<TString,Double_t> &res = hvit->second;
-	  if(res["kIntegral"]>0)
-	    {
-	      for(std::map<TString,Double_t>::iterator resIt = res.begin(); resIt != res.end(); resIt++)
-		controlHistos.fillHisto(resIt->first,"all",resIt->second,weight);
-	    } 
-	}
+      {
+          std::map<TString,Double_t> &res = hvit->second;
+          if(res["kIntegral"]>0)
+            {
+              for(std::map<TString,Double_t>::iterator resIt = res.begin(); resIt != res.end(); resIt++)
+                 controlHistos.fillHisto(resIt->first,"all",resIt->second,weight);
+            } 
+      }
   
       //
       // standard solution counting

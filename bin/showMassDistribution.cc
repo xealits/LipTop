@@ -90,7 +90,9 @@ int main(int argc, char* argv[])
   controlHistos.addHistogram( new TH1F ("st", "; #sum_{leptons,E_{T}^{miss}} p_{T} [GeV/c]; Events / (20 GeV/c)",40, 0.,800.) );
   controlHistos.addHistogram( new TH1F ("sumpt", "; #sum_{leptons} p_{T} [GeV/c]; Events / (20 GeV/c)",25, 0.,500.) );
   controlHistos.addHistogram( new TH1F ("htlep", "; #sum_{jets,leptons,E_{T}^{miss}} [GeV/c]; Events / (20 GeV/c)",70, 0.,1400.) );
-  controlHistos.addHistogram( new TH1F ("mtop", "; m_{Top} [GeV/c^{2}]; Events / (15 GeV/c^{2})", 40, 0.,450.) );
+  //controlHistos.addHistogram( new TH1F ("mtop", "; m_{Top} [GeV/c^{2}]; Events / (15 GeV/c^{2})", 40, 0.,450.) );
+  //controlHistos.addHistogram( new TH1F ("mtop", "; m_{Top} [GeV/c^{2}]; Events / (15 GeV/c^{2})", 90, 0.,450.) );
+  controlHistos.addHistogram( new TH1F ("mtop", "; m_{Top} [GeV/c^{2}]; Events / (15 GeV/c^{2})", 60, 0.,600.) );
   controlHistos.addHistogram( new TH1F ("ptttbar", "; p_{t#bar{t}} [GeV/c]; Events / (10 GeV/c)", 25, 0.,250.) );
   controlHistos.addHistogram( new TH1F ("afb", "; #Delta #eta(t,#bar{t}) ); Events / (0.1)", 100, -5.,5.) );
   controlHistos.addHistogram( new TH1F ("mttbar", "; Mass(t,#bar{t}) [GeV/c^{2}]; Events / (50 GeV/c^{2})", 40, 0.,2000.) );
